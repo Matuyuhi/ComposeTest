@@ -3,14 +3,20 @@ package com.matuyuhi.composetest
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.Text
-import com.matuyuhi.feature.test.testView
+import com.matuyuhi.composetest.component.ViewChanger
+import com.matuyuhi.composetest.component.ViewData
+import com.matuyuhi.feature.dashboard.HomeView
+import com.matuyuhi.feature.dashboard.component.SearchBarPreView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            testView(name = "world")
+            ViewChanger(arrayListOf(
+                ViewData(compose = { SearchBarPreView() }, title="SearchBar"),
+                ViewData(compose = { HomeView() }, title="Feed"),
+            ))
         }
     }
 }

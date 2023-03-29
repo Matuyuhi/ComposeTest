@@ -14,5 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeTest"
 include ':app'
-//include ':feature:test'
+include ':feature:profile'
 include ':feature:test'
+include ':feature:dashboard'
+include ':feature:navbar'
